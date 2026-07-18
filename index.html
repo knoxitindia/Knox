@@ -4,26 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knox | Premium Digital Infrastructure</title>
-    <!-- Google Fonts: Poppins for modern startup look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS Animation Library CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         :root {
-            /* OpenWeaver inspired Theme Colors */
-            --primary: #6B21A8; /* Deep Purple */
-            --primary-light: #F4EDFF; /* Very Soft Purple for backgrounds */
-            --accent-gradient: linear-gradient(135deg, #7C3AED 0%, #DB2777 100%); /* Purple to Pink */
+            --primary: #6B21A8; 
+            --primary-light: #F4EDFF; 
+            --accent-gradient: linear-gradient(135deg, #7C3AED 0%, #DB2777 100%); 
             --bg-white: #FFFFFF;
             --text-dark: #111827;
             --text-muted: #6B7280;
             --border-color: #E5E7EB;
-            
             --success: #10B981;
             --warning: #F59E0B;
             --shadow-soft: 0 10px 40px -10px rgba(107, 33, 168, 0.1);
@@ -33,61 +28,34 @@
             --radius-pill: 50px;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-white);
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-            padding-bottom: 70px; /* Space for sticky footer */
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--bg-white); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; padding-bottom: 70px; }
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
-
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-        /* Navbar */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed; width: 100%; top: 0; z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+            position: fixed; width: 100%; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-
         .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 80px; }
         .logo { font-size: 26px; font-weight: 800; color: var(--text-dark); }
-        .logo span { color: #DB2777; } /* Pink dot */
-
+        .logo span { color: #DB2777; }
         .nav-links { display: flex; gap: 32px; font-weight: 600; font-size: 15px;}
         .nav-links a:hover { color: #DB2777; transition: 0.3s; }
-
         .nav-cta {
-            background: var(--primary);
-            color: var(--bg-white);
-            padding: 10px 28px;
-            border-radius: var(--radius-pill);
-            font-weight: 600;
-            transition: 0.3s;
+            background: var(--primary); color: var(--bg-white); padding: 10px 28px;
+            border-radius: var(--radius-pill); font-weight: 600; transition: 0.3s;
         }
         .nav-cta:hover { background: var(--accent-gradient); transform: translateY(-2px); }
 
-        /* Buttons */
         .btn-gradient {
-            background: var(--accent-gradient); color: var(--bg-white);
-            padding: 14px 32px; border-radius: var(--radius-pill); font-weight: 600;
-            display: inline-flex; align-items: center; justify-content: center; gap: 8px; 
-            transition: 0.3s; border: none; cursor: pointer;
+            background: var(--accent-gradient); color: var(--bg-white); padding: 14px 32px;
+            border-radius: var(--radius-pill); font-weight: 600; display: inline-flex;
+            align-items: center; justify-content: center; gap: 8px; transition: 0.3s; border: none; cursor: pointer;
             box-shadow: 0 4px 15px rgba(219, 39, 119, 0.3);
         }
         .btn-gradient:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(219, 39, 119, 0.4); }
-        
         .btn-outline {
             background: transparent; color: var(--primary); border: 2px solid var(--primary);
             padding: 12px 30px; border-radius: var(--radius-pill); font-weight: 600;
@@ -96,39 +64,31 @@
         .btn-outline:hover { background: var(--primary-light); }
         .btn-block { width: 100%; }
 
-        /* Sections */
         .section-padding { padding: 100px 0; }
         .bg-light-purple { background-color: var(--primary-light); }
-        
         .section-title { text-align: center; margin-bottom: 60px; }
         .section-title h2 { font-size: 42px; font-weight: 800; margin-bottom: 16px; color: var(--primary); }
         .section-title p { font-size: 18px; color: var(--text-muted); font-weight: 500;}
 
-        /* Hero Section */
-        .hero {
-            padding: 160px 0 100px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center;
-        }
+        .hero { padding: 160px 0 100px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
         .hero-content h1 { font-size: 54px; font-weight: 800; line-height: 1.15; margin-bottom: 24px; color: var(--text-dark);}
         .hero-content p { font-size: 18px; color: var(--text-muted); margin-bottom: 40px; }
         .hero-buttons { display: flex; gap: 16px; margin-bottom: 30px; flex-wrap: wrap;}
         .trusted-text { font-size: 14px; color: #DB2777; font-weight: 700; margin-bottom: 16px; display: inline-block; background: #FCE7F3; padding: 6px 16px; border-radius: 20px;}
 
-        /* Widget Card */
-        .widget-card {
-            background: var(--bg-white); border-radius: var(--radius-lg); padding: 32px;
-            box-shadow: var(--shadow-soft); border: 1px solid var(--primary-light);
-        }
-        .widget-header { display: flex; justify-content: space-between; margin-bottom: 24px; align-items: center; }
+        /* Widget Card Redesign */
+        .widget-card { background: var(--bg-white); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-soft); border: 1px solid var(--primary-light); }
+        .widget-header { display: flex; justify-content: flex-end; margin-bottom: 24px; align-items: center; }
         .dots { display: flex; gap: 6px; }
         .dot { width: 12px; height: 12px; border-radius: 50%; }
         .dot.r { background: #FF5F56; } .dot.y { background: #FFBD2E; } .dot.g { background: #27C93F; }
 
-        .stat-box { background: var(--primary-light); padding: 16px; border-radius: 12px; margin-bottom: 16px; }
+        .stat-box { background: var(--primary-light); padding: 16px; border-radius: 12px; margin-bottom: 16px; position: relative; overflow: hidden; }
+        .stat-box::after { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--success); }
         .stat-box h4 { font-size: 12px; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; font-weight: 700;}
         .stat-box h2 { font-size: 32px; font-weight: 700; margin: 4px 0; color: var(--text-dark);}
         .stat-box p { font-size: 14px; color: var(--success); font-weight: 600; }
-        .stat-box p.neutral { color: var(--text-muted); }
-
+        
         .task-list { margin-top: 24px; width: 100%; border-collapse: collapse; }
         .task-list th { text-align: left; font-size: 12px; color: var(--text-muted); padding-bottom: 12px; text-transform: uppercase; }
         .task-list td { padding: 12px 0; border-top: 1px solid var(--border-color); font-size: 14px; font-weight: 600; }
@@ -140,125 +100,135 @@
         .bg-live { background: var(--success); }
         .bg-busy { background: var(--warning); }
 
-        /* Stats Strip */
-        .stats-strip { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--bg-white); padding: 40px 0; text-align: center; }
-        .stat-item h3 { font-size: 40px; font-weight: 800; color: var(--primary); }
+        /* Stats Strip for Auto Countdown */
+        .stats-strip { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--bg-white); padding: 40px 0; text-align: center; border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); border: 1px solid var(--border-color); }
+        .stat-item h3 { font-size: 40px; font-weight: 800; color: var(--primary); display: flex; align-items: center; justify-content: center; }
         .stat-item p { font-size: 16px; color: var(--text-muted); font-weight: 600; margin-top: 4px;}
 
-        /* Services */
         .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-        .service-card {
-            background: var(--bg-white); padding: 40px; border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-soft); transition: all 0.3s ease; border: 1px solid var(--border-color);
-        }
+        .service-card { background: var(--bg-white); padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); transition: all 0.3s ease; border: 1px solid var(--border-color); }
         .service-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); border-color: var(--primary); }
-        .service-icon {
-            width: 60px; height: 60px; background: var(--primary-light); border-radius: 16px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 24px; color: var(--primary); margin-bottom: 24px;
-        }
+        .service-icon { width: 60px; height: 60px; background: var(--primary-light); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--primary); margin-bottom: 24px; }
         .service-card h3 { font-size: 22px; margin-bottom: 12px; font-weight: 700; color: var(--text-dark);}
         .service-card p { color: var(--text-muted); font-size: 15px; margin-bottom: 24px; }
         .service-link { font-weight: 700; color: #DB2777; display: inline-flex; align-items: center; gap: 8px; }
 
-        /* Pricing Grid (Like OpenWeaver) */
         .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; align-items: center;}
-        
-        .pricing-card {
-            background: var(--bg-white); padding: 40px 30px; border-radius: var(--radius-lg);
-            border: 1px solid var(--border-color); display: flex; flex-direction: column; text-align: center;
-        }
-        
-        /* Highlighted Premium Card */
-        .pricing-card.popular {
-            background: var(--primary); color: var(--bg-white);
-            border: none; box-shadow: 0 20px 40px rgba(107, 33, 168, 0.3);
-            transform: scale(1.05); padding: 50px 30px;
-        }
-        
+        .pricing-card { background: var(--bg-white); padding: 40px 30px; border-radius: var(--radius-lg); border: 1px solid var(--border-color); display: flex; flex-direction: column; text-align: center; }
+        .pricing-card.popular { background: var(--primary); color: var(--bg-white); border: none; box-shadow: 0 20px 40px rgba(107, 33, 168, 0.3); transform: scale(1.05); padding: 50px 30px; }
         .pricing-card h4 { font-size: 18px; margin-bottom: 4px; font-weight: 700; color: var(--primary);}
-        .pricing-card.popular h4 { color: #FBCFE8; } /* Light pink text for highlight */
+        .pricing-card.popular h4 { color: #FBCFE8; }
         .pricing-card .sub-text { font-size: 14px; font-weight: 600; margin-bottom: 24px; color: var(--text-muted); }
         .pricing-card.popular .sub-text { color: #E9D5FF; }
-        
         .pricing-card .price { font-size: 42px; font-weight: 800; margin-bottom: 30px; }
         .pricing-card .price span { font-size: 14px; font-weight: 500; }
-        
         .pricing-features { margin-bottom: 32px; flex-grow: 1; text-align: left;}
         .pricing-features li { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; font-size: 15px; font-weight: 500; }
         .pricing-card i { color: #DB2777; font-size: 16px; }
         .pricing-card.popular i { color: #FBCFE8; }
 
-        .email-pricing {
-            background: var(--accent-gradient); color: white; padding: 40px; border-radius: var(--radius-lg); 
-            display: flex; justify-content: space-between; align-items: center; box-shadow: var(--shadow-hover);
-        }
+        .email-pricing { background: var(--accent-gradient); color: white; padding: 40px; border-radius: var(--radius-lg); display: flex; justify-content: space-between; align-items: center; box-shadow: var(--shadow-hover); }
 
-        /* Success Stories */
-        .stories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-        .story-card { background: var(--bg-white); padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); text-align: center; border: 1px solid var(--primary-light);}
+        /* Marquee Success Stories */
+        .marquee-wrapper {
+            overflow: hidden; white-space: nowrap; width: 100%; position: relative; padding: 10px 0;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .marquee-content { display: flex; width: max-content; gap: 30px; animation: scrollMarquee 30s linear infinite; }
+        .marquee-content:hover, .marquee-content:active { animation-play-state: paused; }
+        @keyframes scrollMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        
+        .story-card {
+            background: var(--bg-white); padding: 40px; border-radius: var(--radius-lg); 
+            box-shadow: var(--shadow-soft); text-align: center; border: 1px solid var(--primary-light);
+            min-width: 320px; flex-shrink: 0; white-space: normal;
+        }
         .story-icon { font-size: 40px; color: var(--primary); margin-bottom: 24px; }
         .story-card h4 { font-size: 18px; margin-bottom: 12px; font-weight: 700;}
         .story-card p { font-size: 15px; color: var(--text-muted); }
 
-        /* Contact & Forms */
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        /* Contact Section with Card View */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
         .contact-info h2 { font-size: 40px; font-weight: 800; margin-bottom: 16px; color: var(--primary);}
-        .info-item { display: flex; gap: 16px; margin-bottom: 24px; align-items: flex-start;}
-        .info-icon { width: 45px; height: 45px; background: var(--primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 18px;}
+        .contact-info p.lead { font-size: 18px; color: var(--text-muted); margin-bottom: 40px; }
+        
+        .info-cards-wrapper { display: flex; flex-direction: column; gap: 20px; }
+        .info-card {
+            background: var(--bg-white); padding: 24px; border-radius: var(--radius-md);
+            box-shadow: var(--shadow-soft); border: 1px solid var(--border-color);
+            display: flex; gap: 16px; align-items: center; transition: 0.3s;
+        }
+        .info-card:hover { border-color: var(--primary); transform: translateX(5px); }
+        .info-icon { width: 50px; height: 50px; background: var(--primary-light); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 20px; flex-shrink: 0;}
         .info-text h5 { font-size: 13px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; font-weight: 700;}
-        .info-text p { font-size: 16px; font-weight: 600; color: var(--text-dark); }
+        .info-text p { font-size: 15px; font-weight: 600; color: var(--text-dark); line-height: 1.4; }
 
         .contact-form { background: var(--primary); padding: 40px; border-radius: var(--radius-lg); color: white;}
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; color: #E9D5FF;}
-        .form-control { 
-            width: 100%; padding: 16px; border: none; border-radius: 12px; 
-            font-size: 15px; background: white; transition: 0.3s;
-        }
+        .form-control { width: 100%; padding: 16px; border: none; border-radius: 12px; font-size: 15px; background: white; transition: 0.3s; }
         .form-control:focus { outline: none; box-shadow: 0 0 0 4px rgba(219, 39, 119, 0.5); }
         textarea.form-control { resize: vertical; min-height: 120px; }
 
-        /* Floating WhatsApp Button */
+        /* Popup */
+        .popup-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6); z-index: 10000; align-items: center; justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+        .popup-box {
+            background: white; padding: 40px; border-radius: 24px; text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2); max-width: 400px; width: 90%;
+            animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .popup-icon { color: var(--success); font-size: 60px; margin-bottom: 20px; }
+        .popup-box h3 { font-size: 24px; color: var(--text-dark); margin-bottom: 8px; font-weight: 700;}
+        .popup-box p { color: var(--text-muted); font-size: 16px; }
+
+        /* Corporate Footer */
+        .corporate-footer { background: #111827; color: white; padding: 60px 0 20px; margin-top: 60px; }
+        .footer-content { display: flex; flex-direction: column; align-items: center; gap: 30px; margin-bottom: 40px; }
+        .footer-links { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; }
+        .footer-links a { color: #D1D5DB; font-weight: 500; font-size: 15px; transition: 0.3s; }
+        .footer-links a:hover { color: #DB2777; }
+        .footer-socials { display: flex; gap: 20px; }
+        .footer-socials a {
+            width: 45px; height: 45px; background: rgba(255,255,255,0.1); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 18px; color: white; transition: 0.3s;
+        }
+        .footer-socials a:hover { background: var(--accent-gradient); transform: translateY(-3px); }
+        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: #9CA3AF; font-size: 14px; }
+
         .whatsapp-float {
-            position: fixed; width: 60px; height: 60px; bottom: 85px; right: 24px;
-            background-color: #25d366; color: #FFF; border-radius: 50px;
-            display: flex; align-items: center; justify-content: center; font-size: 32px;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4); z-index: 1000;
-            transition: all 0.3s ease;
+            position: fixed; width: 60px; height: 60px; bottom: 85px; right: 24px; background-color: #25d366; color: #FFF;
+            border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 32px;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4); z-index: 1000; transition: all 0.3s ease;
         }
         .whatsapp-float:hover { transform: scale(1.1); }
+        .sticky-bottom-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--primary); padding: 12px 24px; text-align: center; z-index: 999; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); display: none; }
+        .sticky-bottom-bar a { color: white; font-weight: 700; font-size: 16px; display: flex; justify-content: center; align-items: center; gap: 10px; }
 
-        /* Sticky Bottom CTA (Mobile Style) */
-        .sticky-bottom-bar {
-            position: fixed; bottom: 0; left: 0; width: 100%;
-            background: var(--primary); padding: 12px 24px; text-align: center;
-            z-index: 999; box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
-            display: none; /* Hidden on large desktop, visible on smaller screens */
-        }
-        .sticky-bottom-bar a {
-            color: white; font-weight: 700; font-size: 16px;
-            display: flex; justify-content: center; align-items: center; gap: 10px;
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
+        /* Strict Mobile View */
+        @media (max-width: 768px) {
             .hero, .contact-grid { grid-template-columns: 1fr; text-align: center;}
-            .hero-content h1 { font-size: 40px; }
+            .hero-content h1 { font-size: 36px; }
             .hero-buttons { justify-content: center; }
-            .pricing-grid, .services-grid, .stories-grid { grid-template-columns: 1fr; }
-            .stats-strip { grid-template-columns: 1fr; gap: 30px; }
-            .email-pricing { flex-direction: column; text-align: center; gap: 24px; }
-            .pricing-card.popular { transform: none; }
+            .pricing-grid, .services-grid { grid-template-columns: 1fr; }
+            .stats-strip { grid-template-columns: 1fr; gap: 30px; padding: 40px 20px; }
+            .email-pricing { flex-direction: column; text-align: center; gap: 24px; padding: 30px 20px;}
+            .pricing-card.popular { transform: none; padding: 40px 20px;}
             .nav-links { display: none; }
             .sticky-bottom-bar { display: block; }
             .whatsapp-float { bottom: 75px; right: 16px; width: 50px; height: 50px; font-size: 26px;}
+            .info-card { flex-direction: column; text-align: center; gap: 10px;}
+            .contact-info p.lead { margin-bottom: 24px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
     <header>
         <div class="container nav-inner">
             <div class="logo">Knox<span>.</span></div>
@@ -271,7 +241,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="container hero bg-light-purple" style="max-width: 100%; border-radius: 0 0 40px 40px; margin-bottom: 60px;">
         <div class="container" style="display: grid; grid-template-columns: inherit; gap: inherit; align-items: center;">
             <div class="hero-content" data-aos="fade-right">
@@ -287,7 +256,6 @@
 
             <div class="widget-card" data-aos="fade-left">
                 <div class="widget-header">
-                    <span style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">infrastructure_monitor.knox</span>
                     <div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
                 </div>
                 
@@ -295,12 +263,6 @@
                     <h4>Server Uptime</h4>
                     <h2>99.99%</h2>
                     <p><i class="fa-solid fa-circle-check"></i> All systems nominal</p>
-                </div>
-                
-                <div class="stat-box" style="background: var(--bg-white); border: 1px solid var(--border-color);">
-                    <h4>Active Latency</h4>
-                    <h2>24ms</h2>
-                    <p class="neutral">Mumbai Node</p>
                 </div>
 
                 <table class="task-list">
@@ -320,7 +282,7 @@
                         <td><span class="status-dot bg-live"></span>Secured</td>
                     </tr>
                     <tr>
-                        <td>Field Engineer Dispatch<br><span style="color:var(--text-muted); font-size:12px;">(Suhail)</span></td>
+                        <td>Field Engineer Dispatch</td>
                         <td><span class="tag tag-hw">Hardware</span></td>
                         <td><span class="status-dot bg-busy"></span>Busy</td>
                     </tr>
@@ -329,22 +291,19 @@
         </div>
     </section>
 
-    <!-- Stats Strip -->
-    <div class="container" data-aos="fade-up">
-        <div class="stats-strip" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); border: 1px solid var(--border-color);">
-            <div class="stat-item"><h3>4+</h3><p>Years Experience</p></div>
-            <div class="stat-item"><h3>700+</h3><p>Sites Built</p></div>
-            <div class="stat-item"><h3>1200+</h3><p>Emails Managed</p></div>
+    <div class="container" data-aos="fade-up" id="stats-section">
+        <div class="stats-strip">
+            <div class="stat-item"><h3><span class="counter-value" data-target="4" data-suffix="+">0</span></h3><p>Years Experience</p></div>
+            <div class="stat-item"><h3><span class="counter-value" data-target="700" data-suffix="+">0</span></h3><p>Sites Built</p></div>
+            <div class="stat-item"><h3><span class="counter-value" data-target="1200" data-suffix="+">0</span></h3><p>Emails Managed</p></div>
         </div>
     </div>
 
-    <!-- Services Section -->
     <section id="services" class="container section-padding">
         <div class="section-title" data-aos="fade-up">
             <h2>Stop settling for average.</h2>
             <p>Start dominating the digital landscape with enterprise-grade tech.</p>
         </div>
-
         <div class="services-grid">
             <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="service-icon"><i class="fa-solid fa-code"></i></div>
@@ -367,16 +326,13 @@
         </div>
     </section>
 
-    <!-- Pricing Section -->
     <section id="pricing" class="section-padding bg-light-purple" style="border-radius: 40px; margin-bottom: 60px;">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
                 <h2>Transparent pricing. Built for scale.</h2>
                 <p>From lean startups to high-volume enterprise stores.</p>
             </div>
-
             <div class="pricing-grid">
-                <!-- Starter -->
                 <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
                     <h4>Starter</h4>
                     <p class="sub-text">Website Development</p>
@@ -390,8 +346,6 @@
                     </ul>
                     <a href="#contact" class="btn-outline btn-block">Get Started</a>
                 </div>
-
-                <!-- Premium (Highlighted like OpenWeaver) -->
                 <div class="pricing-card popular" data-aos="fade-up" data-aos-delay="200">
                     <h4>Premium</h4>
                     <p class="sub-text">Flagship Website</p>
@@ -405,8 +359,6 @@
                     </ul>
                     <a href="#contact" class="btn-gradient btn-block" style="background: white; color: var(--primary); box-shadow: none;">Build Premium Site</a>
                 </div>
-
-                <!-- Enterprise -->
                 <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
                     <h4>Enterprise</h4>
                     <p class="sub-text">Business eCommerce</p>
@@ -421,8 +373,6 @@
                     <a href="#contact" class="btn-outline btn-block">Launch Store</a>
                 </div>
             </div>
-
-            <!-- Professional Email Box -->
             <div class="email-pricing" data-aos="fade-up">
                 <div>
                     <h4 style="font-size: 24px; font-weight: 800; margin-bottom: 8px;">Professional Business Email</h4>
@@ -434,28 +384,39 @@
         </div>
     </section>
 
-    <!-- Success Stories -->
-    <section class="container section-padding" style="padding-top: 0;">
-        <div class="section-title" data-aos="fade-up">
+    <!-- Marquee Success Stories -->
+    <section class="section-padding" style="padding-top: 0;">
+        <div class="container section-title" data-aos="fade-up">
             <h2>Success Stories</h2>
-            <p>Real infrastructure deployments.</p>
+            <p>Real infrastructure deployments. Touch to pause.</p>
         </div>
         
-        <div class="stories-grid">
-            <div class="story-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="story-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h4>School ERP System</h4>
-                <p>Digitized complete operations for 2000+ students with advanced portal.</p>
-            </div>
-            <div class="story-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="story-icon"><i class="fa-solid fa-chart-line"></i></div>
-                <h4>eCommerce Growth</h4>
-                <p>Built Shopify store scaling to ₹10L/month revenue smoothly.</p>
-            </div>
-            <div class="story-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="story-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <h4>Corporate Email Migration</h4>
-                <p>Seamlessly migrated 500+ users to Zoho Mail securely.</p>
+        <div class="marquee-wrapper">
+            <!-- Duplicated content for infinite loop illusion -->
+            <div class="marquee-content">
+                <!-- Original 10 -->
+                <div class="story-card"><div class="story-icon"><i class="fa-solid fa-graduation-cap"></i></div><h4>School ERP System</h4><p>Digitized complete operations for 2000+ students with advanced portal.</p></div>
+                <div class="story-card"><div class="story-icon"><i class="fa-solid fa-chart-line"></i></div><h4>eCommerce Growth</h4><p>Built Shopify store scaling to ₹10L/month revenue smoothly.</p></div>
+                <div class="story-card"><div class="story-icon"><i class="fa-solid fa-shield-halved"></i></div><h4>Corporate Email Migration</h4><p>Seamlessly migrated 500+ users to Zoho Mail securely.</p></div>
+                <div class="story-card"><div class="story-icon"><i class="fa-solid fa-cloud"></i></div><h4>Cloud Infrastructure Setup</h4><p>Deployed scalable AWS servers maintaining 99.99% global uptime.</p></div>
+                <div class="story-card"><div class="story-icon"><i class="fa-solid fa-users-gear"></i></div><h4>Custom CRM Integration</h4><p>Developed automated sales pipelines boosting conversions by 40%.</p></div>
+                <div class="story-card"><div class="story-icon"><i class="fa-solid fa-truck-fast"></i></div><h4>Logistics API Development</h4><p>Integrated real-time tracking for 500+ daily nationwide deliveries.</p></div>
+                <div class="story-card"><div class="story-icon"><i class="fa-solid fa-building"></i></div><h4>Real Estate Portal</h4><p>Engineered property listing platform with virtual tour capabilities.</p></div>
+                <div class="story-card"><div class="story-icon"><i class="fa-solid fa-wallet"></i></div><h4>FinTech App Deployment</h4><p>Secured high-frequency trading platform with bank-grade encryption.</p></div>
+                <div class="story-card"><div class="story-icon"><i class="fa-solid fa-stethoscope"></i></div><h4>Healthcare System Update</h4><p>Modernized patient record management for multi-specialty hospital.</p></div>
+                <div class="story-card"><div class="story-icon"><i class="fa-solid fa-boxes-stacked"></i></div><h4>B2B Wholesale Platform</h4><p>Automated bulk ordering and dynamic pricing for 100+ vendors.</p></div>
+
+                <!-- Duplicated 10 -->
+                <div class="story-card"><div class="story-icon"><i class="fa-solid fa-graduation-cap"></i></div><h4>School ERP System</h4><p>Digitized complete operations for 2000+ students with advanced portal.</p></div>
+                <div class="story-card"><div class="story-icon"><i class="fa-solid fa-chart-line"></i></div><h4>eCommerce Growth</h4><p>Built Shopify store scaling to ₹10L/month revenue smoothly.</p></div>
+                <div class="story-card"><div class="story-icon"><i class="fa-solid fa-shield-halved"></i></div><h4>Corporate Email Migration</h4><p>Seamlessly migrated 500+ users to Zoho Mail securely.</p></div>
+                <div class="story-card"><div class="story-icon"><i class="fa-solid fa-cloud"></i></div><h4>Cloud Infrastructure Setup</h4><p>Deployed scalable AWS servers maintaining 99.99% global uptime.</p></div>
+                <div class="story-card"><div class="story-icon"><i class="fa-solid fa-users-gear"></i></div><h4>Custom CRM Integration</h4><p>Developed automated sales pipelines boosting conversions by 40%.</p></div>
+                <div class="story-card"><div class="story-icon"><i class="fa-solid fa-truck-fast"></i></div><h4>Logistics API Development</h4><p>Integrated real-time tracking for 500+ daily nationwide deliveries.</p></div>
+                <div class="story-card"><div class="story-icon"><i class="fa-solid fa-building"></i></div><h4>Real Estate Portal</h4><p>Engineered property listing platform with virtual tour capabilities.</p></div>
+                <div class="story-card"><div class="story-icon"><i class="fa-solid fa-wallet"></i></div><h4>FinTech App Deployment</h4><p>Secured high-frequency trading platform with bank-grade encryption.</p></div>
+                <div class="story-card"><div class="story-icon"><i class="fa-solid fa-stethoscope"></i></div><h4>Healthcare System Update</h4><p>Modernized patient record management for multi-specialty hospital.</p></div>
+                <div class="story-card"><div class="story-icon"><i class="fa-solid fa-boxes-stacked"></i></div><h4>B2B Wholesale Platform</h4><p>Automated bulk ordering and dynamic pricing for 100+ vendors.</p></div>
             </div>
         </div>
     </section>
@@ -465,44 +426,46 @@
         <div class="container contact-grid">
             <div class="contact-info" data-aos="fade-right">
                 <h2>Let's build your front.</h2>
-                <p style="font-size: 18px; color: var(--text-muted); margin-bottom: 40px;">Ready to upgrade your corporate IT infrastructure? Drop a message and our technical experts will get back to you.</p>
+                <p class="lead">Ready to upgrade your corporate IT infrastructure? Drop a message and our technical experts will get back to you.</p>
 
-                <div class="info-item">
-                    <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
-                    <div class="info-text">
-                        <h5>Call Us Directly</h5>
-                        <p>8009262472</p>
+                <div class="info-cards-wrapper">
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="info-text">
+                            <h5>Call Us Directly</h5>
+                            <p>8009262472</p>
+                        </div>
                     </div>
-                </div>
-                <div class="info-item">
-                    <div class="info-icon"><i class="fa-regular fa-envelope"></i></div>
-                    <div class="info-text">
-                        <h5>Email For Support/Sales</h5>
-                        <p>sales@knoxit.in</p>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fa-regular fa-envelope"></i></div>
+                        <div class="info-text">
+                            <h5>Email For Support/Sales</h5>
+                            <p>sales@knoxit.in<br>support@knoxit.in</p>
+                        </div>
                     </div>
-                </div>
-                <div class="info-item">
-                    <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
-                    <div class="info-text">
-                        <h5>Headquarters</h5>
-                        <p>Hema Industrial Estate, E-7,<br>Andheri East, Mumbai 400060</p>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="info-text">
+                            <h5>Add:</h5>
+                            <p>Hema Industrial Estate, E-7,<br>Andheri East, Mumbai 400060</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="contact-form" data-aos="fade-left">
-                <form action="#" method="POST">
+                <form id="knoxForm">
                     <div class="form-group">
                         <label>Full Name</label>
-                        <input type="text" class="form-control" required>
+                        <input type="text" name="name" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Email Address</label>
-                        <input type="email" class="form-control" required>
+                        <input type="email" name="email" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Service Required</label>
-                        <select class="form-control" style="appearance: none;">
+                        <select name="service" class="form-control">
                             <option>Website Development</option>
                             <option>Business Email Setup</option>
                             <option>Enterprise eCommerce</option>
@@ -511,28 +474,116 @@
                     </div>
                     <div class="form-group">
                         <label>Message</label>
-                        <textarea class="form-control" required></textarea>
+                        <textarea name="message" class="form-control" required></textarea>
                     </div>
-                    <button type="submit" class="btn-gradient btn-block" style="border-radius: 12px; font-size: 16px;">Send Message</button>
+                    <button type="submit" class="btn-gradient btn-block" style="background: white; color: var(--primary); font-size: 16px;">Send Message</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Floating WhatsApp Button -->
+    <!-- Success Popup -->
+    <div class="popup-overlay" id="successPopup">
+        <div class="popup-box">
+            <div class="popup-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h3>Successfully Sent!</h3>
+            <p>Our technical team will contact you shortly.</p>
+        </div>
+    </div>
+
+    <!-- Corporate Footer -->
+    <footer class="corporate-footer">
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#contact">Contact Us</a>
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/knoxit.in?igsh=M2xtcmljZjczOTMw" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61576599274405&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@KnoxITServices" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            Knoxit © 2026 All Rights Reserved
+        </div>
+    </footer>
+
+    <!-- Floating UI -->
     <a href="https://wa.me/918009262472?text=Hi%20Knox%20IT,%20I%20want%20to%20upgrade%20my%20digital%20infrastructure." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
-
-    <!-- Sticky Bottom CTA for Mobile (Reference implementation) -->
     <div class="sticky-bottom-bar">
         <a href="#contact">Try for FREE <i class="fa-solid fa-arrow-right"></i></a>
     </div>
 
-    <!-- AOS Animation Script Setup -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ once: true, offset: 50, duration: 800 });
+
+        // Auto Countdown Script
+        const counters = document.querySelectorAll('.counter-value');
+        const speed = 100;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 15);
+                    } else {
+                        counter.innerText = target + counter.getAttribute('data-suffix');
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.getElementById('stats-section');
+        if (statsSection) observer.observe(statsSection);
+
+        // Web3Forms Submit & Popup Script
+        const form = document.getElementById('knoxForm');
+        const popup = document.getElementById('successPopup');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            formData.append('access_key', '94a17473-8d95-43ec-9b0e-e39d7f2cee6c');
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(async (response) => {
+                if (response.status == 200) {
+                    form.reset();
+                    popup.style.display = 'flex';
+                    setTimeout(() => {
+                        popup.style.display = 'none';
+                    }, 3000);
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        });
     </script>
 </body>
 </html>
