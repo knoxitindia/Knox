@@ -30,7 +30,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--bg-white); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; padding-bottom: 70px; }
+        body { background-color: var(--bg-white); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; padding-bottom: 0; }
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
@@ -41,7 +41,7 @@
         }
         .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 80px; }
         .logo { font-size: 26px; font-weight: 800; color: var(--text-dark); }
-        .logo span { color: #DB2777; }
+        .logo span { color: #3B82F6; } /* Blue Dot */
         .nav-links { display: flex; gap: 32px; font-weight: 600; font-size: 15px;}
         .nav-links a:hover { color: #DB2777; transition: 0.3s; }
         .nav-cta {
@@ -69,7 +69,7 @@
         .bg-light-purple { background-color: var(--primary-light); }
         
         .section-title { text-align: center; margin-bottom: 40px; }
-        .section-title h2 { font-size: 42px; font-weight: 800; margin-bottom: 16px; color: var(--primary); }
+        .section-title h2 { font-size: 42px; font-weight: 800; margin-bottom: 16px; color: var(--primary); white-space: nowrap; }
         .section-title p { font-size: 18px; color: var(--text-muted); font-weight: 500;}
 
         .hero-wrapper {
@@ -83,7 +83,7 @@
         .hero-content h1 { font-size: 54px; font-weight: 800; line-height: 1.15; margin-bottom: 24px; color: var(--text-dark);}
         .hero-content p { font-size: 18px; color: var(--text-muted); margin-bottom: 40px; }
         .hero-buttons { display: flex; gap: 16px; margin-bottom: 30px; flex-wrap: wrap;}
-        .trusted-text { font-size: 14px; color: #DB2777; font-weight: 700; margin-bottom: 16px; display: inline-block; background: #FCE7F3; padding: 6px 16px; border-radius: 20px;}
+        .trusted-text { font-size: 14px; color: var(--success); font-weight: 700; margin-bottom: 16px; display: inline-block; background: #D1FAE5; padding: 6px 16px; border-radius: 20px;}
 
         .widget-card { background: var(--bg-white); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-soft); border: 1px solid var(--primary-light); }
         .widget-header { display: flex; justify-content: flex-end; margin-bottom: 24px; align-items: center; }
@@ -160,11 +160,12 @@
         .story-card p { font-size: 15px; color: var(--text-muted); }
 
         .logo-card {
-            width: 180px; height: 100px; display: flex; align-items: center; justify-content: center; 
+            width: 180px; height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
             background: var(--bg-white); border-radius: var(--radius-md); box-shadow: var(--shadow-soft); 
             border: 1px solid var(--border-color); flex-shrink: 0;
         }
-        .logo-card img { max-width: 80%; max-height: 50px; object-fit: contain; }
+        .logo-card img { max-width: 80%; max-height: 45px; object-fit: contain; }
+        .logo-name { font-size: 13px; font-weight: 600; color: var(--text-muted); }
 
         .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
         .contact-info p.lead { font-size: 18px; color: var(--text-muted); margin-bottom: 40px; }
@@ -243,6 +244,7 @@
 
         @media (max-width: 768px) {
             .section-padding { padding: 40px 0; }
+            .section-title h2 { font-size: 32px; }
             .hero-wrapper { padding-top: 120px; padding-bottom: 40px;} 
             .hero, .contact-grid { grid-template-columns: 1fr; text-align: center;}
             .hero-content h1 { font-size: 36px; }
@@ -257,6 +259,7 @@
             .info-card { flex-direction: column; text-align: center; gap: 10px;}
             .contact-info p.lead { margin-bottom: 24px; }
             .footer-links { flex-direction: column; align-items: center; gap: 15px; }
+            .corporate-footer { padding-bottom: 80px; } /* Fixed white gap issue on mobile */
         }
     </style>
 </head>
@@ -270,7 +273,7 @@
                 <a href="#infrastructure">Infrastructure</a>
                 <a href="#pricing">Pricing</a>
             </nav>
-            <a href="#contact" class="nav-cta">Get Started</a>
+            <a href="https://wa.me/918009262472?text=Hi%20Knox%20IT,%20I%20want%20to%20upgrade%20my%20digital%20infrastructure." target="_blank" rel="noopener noreferrer" class="nav-cta">Get Started</a>
         </div>
     </header>
 
@@ -282,7 +285,7 @@
                 <p>Knox delivers premium web development, secure business email, and scalable IT infrastructure designed for high-growth modern brands.</p>
                 
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn-gradient">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="https://wa.me/918009262472?text=Hi%20Knox%20IT,%20I%20want%20to%20upgrade%20my%20digital%20infrastructure." target="_blank" rel="noopener noreferrer" class="btn-gradient">Get Started <i class="fa-solid fa-arrow-right"></i></a>
                     <a href="#services" class="btn-outline"><span style="font-weight: 800; font-size: 16px;">&lt;/&gt;</span> Explore Services</a>
                 </div>
             </div>
@@ -326,7 +329,7 @@
 
     <div class="container" data-aos="fade-up" id="stats-section">
         <div class="section-title" style="margin-bottom: 30px;">
-            <h2>Our Achievements</h2>
+            <h2>Achievements</h2>
         </div>
         <div class="stats-strip">
             <div class="stat-item"><h3><span class="counter-value" data-target="4" data-suffix="+">0</span></h3><p>Years Experience</p></div>
@@ -351,13 +354,13 @@
                 <div class="service-icon"><i class="fa-solid fa-envelope-circle-check"></i></div>
                 <h3>Corporate Email Setup</h3>
                 <p>Secure your professional identity with fully authenticated business email systems (SPF, DKIM, DMARC) via Zoho or Google.</p>
-                <a href="#contact" class="service-link">Setup business email <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="https://wa.me/918009262472?text=Hi%20Knox%20IT,%20I%20want%20to%20setup%20business%20email." target="_blank" rel="noopener noreferrer" class="service-link">Setup business email <i class="fa-solid fa-arrow-right"></i></a>
             </div>
             <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                 <div class="service-icon"><i class="fa-solid fa-server"></i></div>
                 <h3>Enterprise Infrastructure</h3>
                 <p>Deploy custom eCommerce engines and logistics dashboards built for scale. We handle the complex backend.</p>
-                <a href="#contact" class="service-link">View enterprise solutions <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#pricing" class="service-link">View enterprise solutions <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -380,7 +383,7 @@
                         <li><i class="fa-solid fa-check-circle"></i> SSL Setup & Fast Loading</li>
                         <li><i class="fa-solid fa-check-circle"></i> 7 Days Delivery</li>
                     </ul>
-                    <a href="#contact" class="btn-outline btn-block">Get Started</a>
+                    <a href="https://wa.me/918009262472?text=Hi%20Knox%20IT,%20I%20am%20interested%20in%20Starter%20Website%20Package." target="_blank" rel="noopener noreferrer" class="btn-outline btn-block">Get Started</a>
                 </div>
                 <div class="pricing-card popular" data-aos="fade-up" data-aos-delay="200">
                     <h4>Premium</h4>
@@ -393,7 +396,7 @@
                         <li><i class="fa-solid fa-circle-check"></i> Blog & Admin Dashboard</li>
                         <li><i class="fa-solid fa-circle-check"></i> Lead Forms & Priority Support</li>
                     </ul>
-                    <a href="#contact" class="btn-gradient btn-block" style="background: white; color: var(--primary); box-shadow: none;">Build Premium Site</a>
+                    <a href="https://wa.me/918009262472?text=Hi%20Knox%20IT,%20I%20am%20interested%20in%20Premium%20Website%20Package." target="_blank" rel="noopener noreferrer" class="btn-gradient btn-block" style="background: white; color: var(--primary); box-shadow: none;">Build Premium Site</a>
                 </div>
                 <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
                     <h4>Enterprise</h4>
@@ -406,16 +409,16 @@
                         <li><i class="fa-solid fa-check-circle"></i> Shipping & Analytics Dashboard</li>
                         <li><i class="fa-solid fa-check-circle"></i> Advanced Security Protection</li>
                     </ul>
-                    <a href="#contact" class="btn-outline btn-block">Launch Store</a>
+                    <a href="https://wa.me/918009262472?text=Hi%20Knox%20IT,%20I%20am%20interested%20in%20Enterprise%20eCommerce%20Package." target="_blank" rel="noopener noreferrer" class="btn-outline btn-block">Launch Store</a>
                 </div>
             </div>
             <div class="email-pricing" data-aos="fade-up">
                 <div>
                     <h4 style="font-size: 24px; font-weight: 800; margin-bottom: 8px;">Professional Business Email</h4>
                     <p style="opacity: 0.9; max-width: 600px; margin-bottom: 16px; font-size: 15px;">Stop using @gmail.com. Upgrade to a secure corporate identity with SPF, DKIM & DMARC setup.</p>
-                    <div style="font-size: 28px; font-weight: 800;">₹1,500 <span style="font-size: 14px; font-weight: 500; opacity: 0.8;">PER 1U - 1Y</span></div>
+                    <div style="font-size: 28px; font-weight: 800;">₹1,500 <span style="font-size: 14px; font-weight: 500; opacity: 0.8;">PER I'D- Year</span></div>
                 </div>
-                <a href="#contact" class="btn-gradient" style="background: white; color: var(--primary);">Setup Email</a>
+                <a href="https://wa.me/918009262472?text=Hi%20Knox%20IT,%20I%20want%20to%20setup%20business%20email." target="_blank" rel="noopener noreferrer" class="btn-gradient" style="background: white; color: var(--primary);">Setup Email</a>
             </div>
         </div>
     </section>
@@ -439,7 +442,6 @@
                 <div class="story-card"><div class="story-icon"><i class="fa-solid fa-stethoscope"></i></div><h4>Healthcare System Update</h4><p>Modernized patient record management for multi-specialty hospital.</p></div>
                 <div class="story-card"><div class="story-icon"><i class="fa-solid fa-boxes-stacked"></i></div><h4>B2B Wholesale Platform</h4><p>Automated bulk ordering and dynamic pricing for 100+ vendors.</p></div>
                 
-                <!-- Duplicate for seamless scroll -->
                 <div class="story-card"><div class="story-icon"><i class="fa-solid fa-graduation-cap"></i></div><h4>School ERP System</h4><p>Digitized complete operations for 2000+ students with advanced portal.</p></div>
                 <div class="story-card"><div class="story-icon"><i class="fa-solid fa-chart-line"></i></div><h4>eCommerce Growth</h4><p>Built Shopify store scaling to ₹10L/month revenue smoothly.</p></div>
                 <div class="story-card"><div class="story-icon"><i class="fa-solid fa-shield-halved"></i></div><h4>Corporate Email Migration</h4><p>Seamlessly migrated 500+ users to Zoho Mail securely.</p></div>
@@ -466,7 +468,6 @@
                 <div class="logo-card"><img src="images/client4.png" alt="Client 4"></div>
                 <div class="logo-card"><img src="images/client5.png" alt="Client 5"></div>
 
-                <!-- Duplicate for seamless scroll -->
                 <div class="logo-card"><img src="images/client1.png" alt="Client 1"></div>
                 <div class="logo-card"><img src="images/client2.png" alt="Client 2"></div>
                 <div class="logo-card"><img src="images/client3.png" alt="Client 3"></div>
@@ -482,38 +483,37 @@
         </div>
         <div class="marquee-wrapper">
             <div class="marquee-content-reverse">
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg" alt="Oracle"></div>
-                <div class="logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Zoho_Corporation_logo.svg" alt="Zoho"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Microsoft"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg" alt="Cloudflare"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JS"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Nodejs"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker"></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud"><span class="logo-name">Google Cloud</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg" alt="Oracle"><span class="logo-name">Oracle</span></div>
+                <div class="logo-card"><img src="https://www.vectorlogo.zone/logos/zoho/zoho-icon.svg" alt="Zoho"><span class="logo-name">Zoho</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Microsoft"><span class="logo-name">Microsoft Azure</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"><span class="logo-name">AWS</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"><span class="logo-name">Python</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux"><span class="logo-name">Linux</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg" alt="Cloudflare"><span class="logo-name">Cloudflare</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5"><span class="logo-name">HTML5</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3"><span class="logo-name">CSS3</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JS"><span class="logo-name">JavaScript</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React"><span class="logo-name">React</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Nodejs"><span class="logo-name">Node.js</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git"><span class="logo-name">Git</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker"><span class="logo-name">Docker</span></div>
                 
-                <!-- Duplicate for seamless scroll -->
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg" alt="Oracle"></div>
-                <div class="logo-card"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Zoho_Corporation_logo.svg" alt="Zoho"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Microsoft"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg" alt="Cloudflare"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JS"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Nodejs"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git"></div>
-                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker"></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud"><span class="logo-name">Google Cloud</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg" alt="Oracle"><span class="logo-name">Oracle</span></div>
+                <div class="logo-card"><img src="https://www.vectorlogo.zone/logos/zoho/zoho-icon.svg" alt="Zoho"><span class="logo-name">Zoho</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Microsoft"><span class="logo-name">Microsoft Azure</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"><span class="logo-name">AWS</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"><span class="logo-name">Python</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux"><span class="logo-name">Linux</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg" alt="Cloudflare"><span class="logo-name">Cloudflare</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5"><span class="logo-name">HTML5</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3"><span class="logo-name">CSS3</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JS"><span class="logo-name">JavaScript</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React"><span class="logo-name">React</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Nodejs"><span class="logo-name">Node.js</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git"><span class="logo-name">Git</span></div>
+                <div class="logo-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker"><span class="logo-name">Docker</span></div>
             </div>
         </div>
     </section>
@@ -644,7 +644,7 @@
     </a>
     
     <div class="sticky-bottom-bar">
-        <a href="#contact">Launch Now <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="https://wa.me/918009262472?text=Hi%20Knox%20IT,%20I%20want%20to%20upgrade%20my%20digital%20infrastructure." target="_blank" rel="noopener noreferrer">Launch Now <i class="fa-solid fa-arrow-right"></i></a>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -652,18 +652,21 @@
         AOS.init({ once: true, offset: 50, duration: 800 });
 
         const counters = document.querySelectorAll('.counter-value');
-        const speed = 100;
-
+        
         const animateCounters = () => {
             counters.forEach(counter => {
                 const updateCount = () => {
                     const target = +counter.getAttribute('data-target');
                     const count = +counter.innerText;
-                    const inc = target / speed;
+                    
+                    let inc = target / 100;
+                    if (target < 10) {
+                        inc = 1;
+                    }
 
                     if (count < target) {
                         counter.innerText = Math.ceil(count + inc);
-                        setTimeout(updateCount, 15);
+                        setTimeout(updateCount, target < 10 ? 400 : 15);
                     } else {
                         counter.innerText = target + counter.getAttribute('data-suffix');
                     }
