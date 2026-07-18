@@ -41,7 +41,7 @@
         }
         .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 80px; }
         .logo { font-size: 26px; font-weight: 800; color: var(--text-dark); }
-        .logo span { color: #3B82F6; } /* Blue Dot */
+        .logo span { color: #3B82F6; } 
         .nav-links { display: flex; gap: 32px; font-weight: 600; font-size: 15px;}
         .nav-links a:hover { color: #DB2777; transition: 0.3s; }
         .nav-cta {
@@ -80,10 +80,29 @@
             margin-bottom: 40px;
         }
         .hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
-        .hero-content h1 { font-size: 54px; font-weight: 800; line-height: 1.15; margin-bottom: 24px; color: var(--text-dark);}
+
+        @keyframes floatHorizontal {
+            0% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+            100% { transform: translateX(-10px); }
+        }
+
+        .hero-content h1 { 
+            font-size: 54px; 
+            font-weight: 800; 
+            line-height: 1.15; 
+            margin-bottom: 24px; 
+            color: var(--text-dark);
+            animation: floatHorizontal 6s ease-in-out infinite;
+        }
         .hero-content p { font-size: 18px; color: var(--text-muted); margin-bottom: 40px; }
         .hero-buttons { display: flex; gap: 16px; margin-bottom: 30px; flex-wrap: wrap;}
         .trusted-text { font-size: 14px; color: var(--success); font-weight: 700; margin-bottom: 16px; display: inline-block; background: #D1FAE5; padding: 6px 16px; border-radius: 20px;}
+
+        /* Typewriter CSS */
+        .typewriter-container { min-height: 90px; }
+        .cursor { display: inline-block; animation: blink 0.7s step-end infinite; font-weight: 800; color: var(--primary); margin-left: 2px;}
+        @keyframes blink { 50% { opacity: 0; } }
 
         .widget-card { background: var(--bg-white); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-soft); border: 1px solid var(--primary-light); }
         .widget-header { display: flex; justify-content: flex-end; margin-bottom: 24px; align-items: center; }
@@ -248,6 +267,7 @@
             .hero-wrapper { padding-top: 120px; padding-bottom: 40px;} 
             .hero, .contact-grid { grid-template-columns: 1fr; text-align: center;}
             .hero-content h1 { font-size: 36px; }
+            .typewriter-container { min-height: 140px; }
             .hero-buttons { justify-content: center; }
             .pricing-grid, .services-grid { grid-template-columns: 1fr; }
             .stats-strip { grid-template-columns: 1fr; gap: 30px; padding: 40px 20px; }
@@ -259,7 +279,7 @@
             .info-card { flex-direction: column; text-align: center; gap: 10px;}
             .contact-info p.lead { margin-bottom: 24px; }
             .footer-links { flex-direction: column; align-items: center; gap: 15px; }
-            .corporate-footer { padding-bottom: 80px; } /* Fixed white gap issue on mobile */
+            .corporate-footer { padding-bottom: 80px; } 
         }
     </style>
 </head>
@@ -282,7 +302,7 @@
             <div class="hero-content" data-aos="fade-right">
                 <div class="trusted-text"><i class="fa-solid fa-star"></i> Trusted by 100+ corporate clients</div>
                 <h1>The digital front your brand deserves.</h1>
-                <p>Knox delivers premium web development, secure business email, and scalable IT infrastructure designed for high-growth modern brands.</p>
+                <p class="typewriter-container"><span id="typewriter-text"></span><span class="cursor">|</span></p>
                 
                 <div class="hero-buttons">
                     <a href="https://wa.me/918009262472?text=Hi%20Knox%20IT,%20I%20want%20to%20upgrade%20my%20digital%20infrastructure." target="_blank" rel="noopener noreferrer" class="btn-gradient">Get Started <i class="fa-solid fa-arrow-right"></i></a>
@@ -651,6 +671,35 @@
     <script>
         AOS.init({ once: true, offset: 50, duration: 800 });
 
+        // Typewriter Effect Logic
+        const textToType = "Knox delivers premium web development, secure business email, and scalable IT infrastructure designed for high-growth modern brands.";
+        const typeWriterElement = document.getElementById('typewriter-text');
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeWriter() {
+            if (!isDeleting && charIndex <= textToType.length) {
+                typeWriterElement.innerHTML = textToType.substring(0, charIndex);
+                charIndex++;
+                setTimeout(typeWriter, 40);
+            } else if (!isDeleting && charIndex > textToType.length) {
+                isDeleting = true;
+                setTimeout(typeWriter, 15000); 
+            } else if (isDeleting && charIndex > 0) {
+                typeWriterElement.innerHTML = textToType.substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(typeWriter, 20);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                setTimeout(typeWriter, 500);
+            }
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            typeWriter();
+        });
+
+        // Counter Logic
         const counters = document.querySelectorAll('.counter-value');
         
         const animateCounters = () => {
@@ -687,6 +736,7 @@
         const statsSection = document.getElementById('stats-section');
         if (statsSection) observer.observe(statsSection);
 
+        // Web3Forms Logic
         const form = document.getElementById('knoxForm');
         const popup = document.getElementById('successPopup');
 
