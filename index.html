@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Point 5: Disable Zoom In/Out -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Knox | Premium Digital Infrastructure</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,7 +21,7 @@
             --text-dark: #111827;
             --text-muted: #6B7280;
             --border-color: #E5E7EB;
-            --success: #10B981;
+            --success: #10B981; /* Point 6: Green Color */
             --warning: #F59E0B;
             --shadow-soft: 0 10px 40px -10px rgba(107, 33, 168, 0.1);
             --shadow-hover: 0 20px 50px -10px rgba(107, 33, 168, 0.2);
@@ -66,17 +68,25 @@
 
         .section-padding { padding: 100px 0; }
         .bg-light-purple { background-color: var(--primary-light); }
+        
         .section-title { text-align: center; margin-bottom: 60px; }
         .section-title h2 { font-size: 42px; font-weight: 800; margin-bottom: 16px; color: var(--primary); }
         .section-title p { font-size: 18px; color: var(--text-muted); font-weight: 500;}
 
-        .hero { padding: 160px 0 100px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
+        /* Point 1: Desktop View Fix for Hero Grid */
+        .hero-wrapper {
+            background-color: var(--primary-light);
+            border-radius: 0 0 40px 40px;
+            padding-top: 160px;
+            padding-bottom: 100px;
+            margin-bottom: 60px;
+        }
+        .hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
         .hero-content h1 { font-size: 54px; font-weight: 800; line-height: 1.15; margin-bottom: 24px; color: var(--text-dark);}
         .hero-content p { font-size: 18px; color: var(--text-muted); margin-bottom: 40px; }
         .hero-buttons { display: flex; gap: 16px; margin-bottom: 30px; flex-wrap: wrap;}
         .trusted-text { font-size: 14px; color: #DB2777; font-weight: 700; margin-bottom: 16px; display: inline-block; background: #FCE7F3; padding: 6px 16px; border-radius: 20px;}
 
-        /* Widget Card Redesign */
         .widget-card { background: var(--bg-white); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-soft); border: 1px solid var(--primary-light); }
         .widget-header { display: flex; justify-content: flex-end; margin-bottom: 24px; align-items: center; }
         .dots { display: flex; gap: 6px; }
@@ -86,7 +96,7 @@
         .stat-box { background: var(--primary-light); padding: 16px; border-radius: 12px; margin-bottom: 16px; position: relative; overflow: hidden; }
         .stat-box::after { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--success); }
         .stat-box h4 { font-size: 12px; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; font-weight: 700;}
-        .stat-box h2 { font-size: 32px; font-weight: 700; margin: 4px 0; color: var(--text-dark);}
+        .stat-box h2 { font-size: 32px; font-weight: 700; margin: 4px 0; color: var(--success);} /* Point 6: Green highlight */
         .stat-box p { font-size: 14px; color: var(--success); font-weight: 600; }
         
         .task-list { margin-top: 24px; width: 100%; border-collapse: collapse; }
@@ -100,8 +110,7 @@
         .bg-live { background: var(--success); }
         .bg-busy { background: var(--warning); }
 
-        /* Stats Strip for Auto Countdown */
-        .stats-strip { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--bg-white); padding: 40px 0; text-align: center; border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); border: 1px solid var(--border-color); }
+        .stats-strip { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--bg-white); padding: 40px 0; text-align: center; border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); border: 1px solid var(--border-color); margin-bottom: 60px; }
         .stat-item h3 { font-size: 40px; font-weight: 800; color: var(--primary); display: flex; align-items: center; justify-content: center; }
         .stat-item p { font-size: 16px; color: var(--text-muted); font-weight: 600; margin-top: 4px;}
 
@@ -124,12 +133,12 @@
         .pricing-card .price span { font-size: 14px; font-weight: 500; }
         .pricing-features { margin-bottom: 32px; flex-grow: 1; text-align: left;}
         .pricing-features li { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; font-size: 15px; font-weight: 500; }
-        .pricing-card i { color: #DB2777; font-size: 16px; }
-        .pricing-card.popular i { color: #FBCFE8; }
+        
+        /* Point 6: Green Ticks */
+        .pricing-card i, .pricing-card.popular i { color: var(--success) !important; font-size: 16px; }
 
         .email-pricing { background: var(--accent-gradient); color: white; padding: 40px; border-radius: var(--radius-lg); display: flex; justify-content: space-between; align-items: center; box-shadow: var(--shadow-hover); }
 
-        /* Marquee Success Stories */
         .marquee-wrapper {
             overflow: hidden; white-space: nowrap; width: 100%; position: relative; padding: 10px 0;
             mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
@@ -148,9 +157,7 @@
         .story-card h4 { font-size: 18px; margin-bottom: 12px; font-weight: 700;}
         .story-card p { font-size: 15px; color: var(--text-muted); }
 
-        /* Contact Section with Card View */
         .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
-        .contact-info h2 { font-size: 40px; font-weight: 800; margin-bottom: 16px; color: var(--primary);}
         .contact-info p.lead { font-size: 18px; color: var(--text-muted); margin-bottom: 40px; }
         
         .info-cards-wrapper { display: flex; flex-direction: column; gap: 20px; }
@@ -171,27 +178,36 @@
         .form-control:focus { outline: none; box-shadow: 0 0 0 4px rgba(219, 39, 119, 0.5); }
         textarea.form-control { resize: vertical; min-height: 120px; }
 
-        /* Popup */
+        /* Popup Modals */
         .popup-overlay {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.6); z-index: 10000; align-items: center; justify-content: center;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px); padding: 20px;
         }
         .popup-box {
             background: white; padding: 40px; border-radius: 24px; text-align: center;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.2); max-width: 400px; width: 90%;
-            animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2); max-width: 400px; width: 100%;
+            animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative;
+        }
+        .modal-box {
+            background: white; padding: 40px; border-radius: 24px; text-align: left;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2); max-width: 600px; width: 100%;
+            animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative;
+            max-height: 80vh; overflow-y: auto; color: var(--text-dark);
+        }
+        .close-btn {
+            position: absolute; top: 20px; right: 20px; font-size: 24px; cursor: pointer; color: var(--text-muted);
         }
         @keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         .popup-icon { color: var(--success); font-size: 60px; margin-bottom: 20px; }
-        .popup-box h3 { font-size: 24px; color: var(--text-dark); margin-bottom: 8px; font-weight: 700;}
-        .popup-box p { color: var(--text-muted); font-size: 16px; }
+        .popup-box h3, .modal-box h3 { font-size: 24px; color: var(--text-dark); margin-bottom: 12px; font-weight: 700;}
+        .popup-box p, .modal-box p { color: var(--text-muted); font-size: 15px; margin-bottom: 15px;}
 
-        /* Corporate Footer */
-        .corporate-footer { background: #111827; color: white; padding: 60px 0 20px; margin-top: 60px; }
+        /* Point 3: Footer Styling & Gap Fix */
+        .corporate-footer { background: #111827; color: white; padding: 60px 0 30px; margin-top: 0; }
         .footer-content { display: flex; flex-direction: column; align-items: center; gap: 30px; margin-bottom: 40px; }
         .footer-links { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; }
-        .footer-links a { color: #D1D5DB; font-weight: 500; font-size: 15px; transition: 0.3s; }
+        .footer-links a { color: #D1D5DB; font-weight: 500; font-size: 15px; transition: 0.3s; cursor: pointer; }
         .footer-links a:hover { color: #DB2777; }
         .footer-socials { display: flex; gap: 20px; }
         .footer-socials a {
@@ -210,8 +226,9 @@
         .sticky-bottom-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--primary); padding: 12px 24px; text-align: center; z-index: 999; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); display: none; }
         .sticky-bottom-bar a { color: white; font-weight: 700; font-size: 16px; display: flex; justify-content: center; align-items: center; gap: 10px; }
 
-        /* Strict Mobile View */
+        /* Point 2: Mobile View Fix */
         @media (max-width: 768px) {
+            .hero-wrapper { padding-top: 120px; } /* Prevent overlap with navbar */
             .hero, .contact-grid { grid-template-columns: 1fr; text-align: center;}
             .hero-content h1 { font-size: 36px; }
             .hero-buttons { justify-content: center; }
@@ -241,16 +258,18 @@
         </div>
     </header>
 
-    <section class="container hero bg-light-purple" style="max-width: 100%; border-radius: 0 0 40px 40px; margin-bottom: 60px;">
-        <div class="container" style="display: grid; grid-template-columns: inherit; gap: inherit; align-items: center;">
+    <div class="hero-wrapper">
+        <section class="container hero">
             <div class="hero-content" data-aos="fade-right">
                 <div class="trusted-text"><i class="fa-solid fa-star"></i> Trusted by 100+ corporate clients</div>
+                <!-- Point 7: Section Header for Hero -->
                 <h1>The digital front your brand deserves.</h1>
                 <p>Knox delivers premium web development, secure business email, and scalable IT infrastructure designed for high-growth modern brands.</p>
                 
                 <div class="hero-buttons">
                     <a href="#contact" class="btn-gradient">Get Started <i class="fa-solid fa-arrow-right"></i></a>
-                    <a href="#services" class="btn-outline"><i class="fa-regular fa-circle-play"></i> Explore Services</a>
+                    <!-- Point 4: Explore Services Icon Change -->
+                    <a href="#services" class="btn-outline"><span style="font-weight: 800; font-size: 16px;">&lt;/&gt;</span> Explore Services</a>
                 </div>
             </div>
 
@@ -261,6 +280,7 @@
                 
                 <div class="stat-box">
                     <h4>Server Uptime</h4>
+                    <!-- Point 6: Green Highlights -->
                     <h2>99.99%</h2>
                     <p><i class="fa-solid fa-circle-check"></i> All systems nominal</p>
                 </div>
@@ -288,10 +308,14 @@
                     </tr>
                 </table>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
+    <!-- Point 7: Section Header for Achievements -->
     <div class="container" data-aos="fade-up" id="stats-section">
+        <div class="section-title" style="margin-bottom: 30px;">
+            <h2>Our Achievements</h2>
+        </div>
         <div class="stats-strip">
             <div class="stat-item"><h3><span class="counter-value" data-target="4" data-suffix="+">0</span></h3><p>Years Experience</p></div>
             <div class="stat-item"><h3><span class="counter-value" data-target="700" data-suffix="+">0</span></h3><p>Sites Built</p></div>
@@ -299,9 +323,10 @@
         </div>
     </div>
 
+    <!-- Point 7: Section Header for Services -->
     <section id="services" class="container section-padding">
         <div class="section-title" data-aos="fade-up">
-            <h2>Stop settling for average.</h2>
+            <h2>Our Services</h2>
             <p>Start dominating the digital landscape with enterprise-grade tech.</p>
         </div>
         <div class="services-grid">
@@ -326,10 +351,11 @@
         </div>
     </section>
 
+    <!-- Point 7: Section Header for Pricing -->
     <section id="pricing" class="section-padding bg-light-purple" style="border-radius: 40px; margin-bottom: 60px;">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
-                <h2>Transparent pricing. Built for scale.</h2>
+                <h2>Pricing Plans</h2>
                 <p>From lean startups to high-volume enterprise stores.</p>
             </div>
             <div class="pricing-grid">
@@ -384,7 +410,7 @@
         </div>
     </section>
 
-    <!-- Marquee Success Stories -->
+    <!-- Point 7: Section Header for Success Stories -->
     <section class="section-padding" style="padding-top: 0;">
         <div class="container section-title" data-aos="fade-up">
             <h2>Success Stories</h2>
@@ -392,9 +418,7 @@
         </div>
         
         <div class="marquee-wrapper">
-            <!-- Duplicated content for infinite loop illusion -->
             <div class="marquee-content">
-                <!-- Original 10 -->
                 <div class="story-card"><div class="story-icon"><i class="fa-solid fa-graduation-cap"></i></div><h4>School ERP System</h4><p>Digitized complete operations for 2000+ students with advanced portal.</p></div>
                 <div class="story-card"><div class="story-icon"><i class="fa-solid fa-chart-line"></i></div><h4>eCommerce Growth</h4><p>Built Shopify store scaling to ₹10L/month revenue smoothly.</p></div>
                 <div class="story-card"><div class="story-icon"><i class="fa-solid fa-shield-halved"></i></div><h4>Corporate Email Migration</h4><p>Seamlessly migrated 500+ users to Zoho Mail securely.</p></div>
@@ -405,8 +429,7 @@
                 <div class="story-card"><div class="story-icon"><i class="fa-solid fa-wallet"></i></div><h4>FinTech App Deployment</h4><p>Secured high-frequency trading platform with bank-grade encryption.</p></div>
                 <div class="story-card"><div class="story-icon"><i class="fa-solid fa-stethoscope"></i></div><h4>Healthcare System Update</h4><p>Modernized patient record management for multi-specialty hospital.</p></div>
                 <div class="story-card"><div class="story-icon"><i class="fa-solid fa-boxes-stacked"></i></div><h4>B2B Wholesale Platform</h4><p>Automated bulk ordering and dynamic pricing for 100+ vendors.</p></div>
-
-                <!-- Duplicated 10 -->
+                
                 <div class="story-card"><div class="story-icon"><i class="fa-solid fa-graduation-cap"></i></div><h4>School ERP System</h4><p>Digitized complete operations for 2000+ students with advanced portal.</p></div>
                 <div class="story-card"><div class="story-icon"><i class="fa-solid fa-chart-line"></i></div><h4>eCommerce Growth</h4><p>Built Shopify store scaling to ₹10L/month revenue smoothly.</p></div>
                 <div class="story-card"><div class="story-icon"><i class="fa-solid fa-shield-halved"></i></div><h4>Corporate Email Migration</h4><p>Seamlessly migrated 500+ users to Zoho Mail securely.</p></div>
@@ -421,11 +444,11 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section-padding" style="border-top: 1px solid var(--border-color);">
+    <!-- Point 7: Section Header for Contact -->
+    <section id="contact" class="section-padding" style="border-top: 1px solid var(--border-color); padding-bottom: 60px;">
         <div class="container contact-grid">
             <div class="contact-info" data-aos="fade-right">
-                <h2>Let's build your front.</h2>
+                <h2>Contact Us</h2>
                 <p class="lead">Ready to upgrade your corporate IT infrastructure? Drop a message and our technical experts will get back to you.</p>
 
                 <div class="info-cards-wrapper">
@@ -491,14 +514,47 @@
         </div>
     </div>
 
+    <!-- Point 3: Footer Popups (About, Contact, Terms, Privacy) -->
+    <div class="popup-overlay" id="modalAbout">
+        <div class="modal-box">
+            <i class="fa-solid fa-xmark close-btn" onclick="closeModal('modalAbout')"></i>
+            <h3>About Us</h3>
+            <p>Knox delivers premium web development, secure business email, and scalable IT infrastructure designed for high-growth modern brands. We are dedicated to providing enterprise-grade technology to businesses of all sizes, ensuring reliability, speed, and security.</p>
+        </div>
+    </div>
+    <div class="popup-overlay" id="modalContact">
+        <div class="modal-box">
+            <i class="fa-solid fa-xmark close-btn" onclick="closeModal('modalContact')"></i>
+            <h3>Contact Us</h3>
+            <p><strong>Phone:</strong> 8009262472</p>
+            <p><strong>Sales:</strong> sales@knoxit.in</p>
+            <p><strong>Support:</strong> support@knoxit.in</p>
+            <p><strong>Address:</strong> Hema Industrial Estate, E-7, Andheri East, Mumbai 400060</p>
+        </div>
+    </div>
+    <div class="popup-overlay" id="modalTerms">
+        <div class="modal-box">
+            <i class="fa-solid fa-xmark close-btn" onclick="closeModal('modalTerms')"></i>
+            <h3>Terms of Service</h3>
+            <p>By accessing our website and utilizing our IT services, you agree to comply with our terms and conditions. All project timelines and deliverables are subject to the signed service agreements. Knox IT Services reserves the right to modify service packages based on client requirements.</p>
+        </div>
+    </div>
+    <div class="popup-overlay" id="modalPrivacy">
+        <div class="modal-box">
+            <i class="fa-solid fa-xmark close-btn" onclick="closeModal('modalPrivacy')"></i>
+            <h3>Privacy Policy</h3>
+            <p>We value your privacy. Any information submitted through our contact forms is strictly used for communication and project scoping. We do not sell, rent, or distribute your personal or business data to third-party vendors without explicit consent.</p>
+        </div>
+    </div>
+
     <!-- Corporate Footer -->
     <footer class="corporate-footer">
         <div class="container footer-content">
             <div class="footer-links">
-                <a href="#">About Us</a>
-                <a href="#contact">Contact Us</a>
-                <a href="#">Terms</a>
-                <a href="#">Privacy</a>
+                <a onclick="openModal('modalAbout')">About Us</a>
+                <a onclick="openModal('modalContact')">Contact Us</a>
+                <a onclick="openModal('modalTerms')">Terms</a>
+                <a onclick="openModal('modalPrivacy')">Privacy</a>
             </div>
             <div class="footer-socials">
                 <a href="https://www.instagram.com/knoxit.in?igsh=M2xtcmljZjczOTMw" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
@@ -563,7 +619,6 @@
 
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            
             const formData = new FormData(form);
             formData.append('access_key', '94a17473-8d95-43ec-9b0e-e39d7f2cee6c');
 
@@ -584,6 +639,21 @@
                 console.log(error);
             });
         });
+
+        // Modal Logic
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+        
+        // Close modals when clicking outside the box
+        window.onclick = function(event) {
+            if (event.target.classList.contains('popup-overlay')) {
+                event.target.style.display = 'none';
+            }
+        }
     </script>
 </body>
 </html>
